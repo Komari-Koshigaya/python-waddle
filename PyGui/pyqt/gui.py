@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 
 
 class Ui_MainWindow(object):
@@ -56,6 +57,9 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+        # 统一为所有控件绑定函数
+        self.bindAllEvent()
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "欢迎来到的德莱联盟！"))
@@ -68,3 +72,12 @@ class Ui_MainWindow(object):
         self.menu_H.setTitle(_translate("MainWindow", "帮助(H)"))
         self.actionabout.setText(_translate("MainWindow", "关于"))
         self.actionshi.setText(_translate("MainWindow", "使用帮助"))
+
+    # 统一为所有控件绑定函数
+    def bindAllEvent(self):
+        self.pushButton.clicked.connect(lambda: self.buttonClick(self.pushButton))
+        self.pushButton_2.clicked.connect(lambda: self.buttonClick(self.pushButton_2))
+
+    # 登录按钮点击事件
+    def buttonClick(self, btn):
+        print("你点击了" + btn.text() + "!")
