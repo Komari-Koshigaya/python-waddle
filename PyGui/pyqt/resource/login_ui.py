@@ -71,11 +71,3 @@ class Ui_MainWindow(object):
         self.actionabout.setText(_translate("MainWindow", "关于"))
         self.actionabout.setShortcut(_translate("MainWindow", "F4"))
         self.actionshi.setText(_translate("MainWindow", "使用帮助"))
-
-
-
-
-
-
-
-
