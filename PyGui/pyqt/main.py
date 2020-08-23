@@ -3,7 +3,7 @@
 
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
-from gui import Ui_MainWindow
+from resource.login_ui import Ui_MainWindow
 
 
 class MyWindow(QMainWindow, Ui_MainWindow):

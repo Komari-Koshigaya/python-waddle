@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'gui.ui'
+# Form implementation generated from reading ui file 'login.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.0
 #
@@ -71,3 +71,11 @@ class Ui_MainWindow(object):
         self.actionabout.setText(_translate("MainWindow", "关于"))
         self.actionabout.setShortcut(_translate("MainWindow", "F4"))
         self.actionshi.setText(_translate("MainWindow", "使用帮助"))
+
+
+
+
+
+
+
+
