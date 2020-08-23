@@ -14,7 +14,7 @@
    <string>欢迎来到的德莱联盟！</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="login_btn">
     <property name="geometry">
      <rect>
       <x>350</x>
@@ -27,7 +27,7 @@
      <string>登录</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="regi_btn">
     <property name="geometry">
      <rect>
       <x>470</x>
@@ -66,7 +66,7 @@
      <string>密码</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="name_edit">
     <property name="geometry">
      <rect>
       <x>350</x>
@@ -79,7 +79,7 @@
      <string>请输入6-10位的账号</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="pwd_edit">
     <property name="geometry">
      <rect>
       <x>350</x>
@@ -90,6 +90,9 @@
     </property>
     <property name="toolTip">
      <string>密码必须包括英文字母、数字、特殊符号</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
     </property>
    </widget>
   </widget>
@@ -116,6 +119,9 @@
    <property name="text">
     <string>关于</string>
    </property>
+   <property name="shortcut">
+    <string>F4</string>
+   </property>
   </action>
   <action name="actionshi">
    <property name="text">
@@ -124,5 +130,22 @@
   </action>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>regi_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showMaximized()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>516</x>
+     <y>289</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>361</x>
+     <y>191</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
