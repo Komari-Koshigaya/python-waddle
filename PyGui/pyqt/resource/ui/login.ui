@@ -40,7 +40,7 @@
      <string>注册</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="name_label">
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -53,7 +53,7 @@
      <string>账号</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="pwd_label">
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -105,17 +105,17 @@
      <height>26</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu_H">
+   <widget class="QMenu" name="help_menu">
     <property name="title">
-     <string>帮助(H)</string>
+     <string>帮助(&amp;F)</string>
     </property>
-    <addaction name="actionabout"/>
-    <addaction name="actionshi"/>
+    <addaction name="about_action"/>
+    <addaction name="help_action"/>
    </widget>
-   <addaction name="menu_H"/>
+   <addaction name="help_menu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionabout">
+  <action name="about_action">
    <property name="text">
     <string>关于</string>
    </property>
@@ -123,7 +123,7 @@
     <string>F4</string>
    </property>
   </action>
-  <action name="actionshi">
+  <action name="help_action">
    <property name="text">
     <string>使用帮助</string>
    </property>

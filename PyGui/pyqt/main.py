@@ -11,7 +11,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         super(MyWindow, self).__init__(parent)
         self.setupUi(self)
         self.login_btn.clicked.connect(self.end_event)  # 绑定登陆函数
-        self.actionabout.triggered.connect(self.about_event)
+        self.about_action.triggered.connect(self.about_event)
 
     # 登陆函数
     def end_event(self):
