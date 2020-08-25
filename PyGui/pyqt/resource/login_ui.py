@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'login.ui'
+# Form implementation generated from reading ui file 'Login.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.0
 #
@@ -11,63 +11,39 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(723, 383)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setObjectName("centralwidget")
-        self.login_btn = QtWidgets.QPushButton(self.centralwidget)
-        self.login_btn.setGeometry(QtCore.QRect(350, 250, 93, 28))
-        self.login_btn.setObjectName("login_btn")
-        self.regi_btn = QtWidgets.QPushButton(self.centralwidget)
-        self.regi_btn.setGeometry(QtCore.QRect(470, 250, 93, 28))
-        self.regi_btn.setObjectName("regi_btn")
-        self.name_label = QtWidgets.QLabel(self.centralwidget)
-        self.name_label.setGeometry(QtCore.QRect(140, 70, 72, 15))
-        self.name_label.setObjectName("name_label")
-        self.pwd_label = QtWidgets.QLabel(self.centralwidget)
-        self.pwd_label.setGeometry(QtCore.QRect(140, 150, 72, 15))
-        self.pwd_label.setObjectName("pwd_label")
-        self.name_edit = QtWidgets.QLineEdit(self.centralwidget)
-        self.name_edit.setGeometry(QtCore.QRect(350, 60, 211, 41))
-        self.name_edit.setObjectName("name_edit")
-        self.pwd_edit = QtWidgets.QLineEdit(self.centralwidget)
-        self.pwd_edit.setGeometry(QtCore.QRect(350, 150, 211, 41))
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(400, 300)
+        self.pwd_edit = QtWidgets.QLineEdit(Dialog)
+        self.pwd_edit.setGeometry(QtCore.QRect(120, 150, 211, 41))
         self.pwd_edit.setEchoMode(QtWidgets.QLineEdit.Password)
         self.pwd_edit.setObjectName("pwd_edit")
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 723, 26))
-        self.menubar.setObjectName("menubar")
-        self.help_menu = QtWidgets.QMenu(self.menubar)
-        self.help_menu.setObjectName("help_menu")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
-        self.about_action = QtWidgets.QAction(MainWindow)
-        self.about_action.setObjectName("about_action")
-        self.help_action = QtWidgets.QAction(MainWindow)
-        self.help_action.setObjectName("help_action")
-        self.help_menu.addAction(self.about_action)
-        self.help_menu.addAction(self.help_action)
-        self.menubar.addAction(self.help_menu.menuAction())
+        self.pwd_label = QtWidgets.QLabel(Dialog)
+        self.pwd_label.setGeometry(QtCore.QRect(50, 150, 72, 15))
+        self.pwd_label.setObjectName("pwd_label")
+        self.name_edit = QtWidgets.QLineEdit(Dialog)
+        self.name_edit.setGeometry(QtCore.QRect(120, 60, 211, 41))
+        self.name_edit.setObjectName("name_edit")
+        self.login_btn = QtWidgets.QPushButton(Dialog)
+        self.login_btn.setGeometry(QtCore.QRect(110, 230, 93, 28))
+        self.login_btn.setObjectName("login_btn")
+        self.regi_btn = QtWidgets.QPushButton(Dialog)
+        self.regi_btn.setGeometry(QtCore.QRect(230, 230, 93, 28))
+        self.regi_btn.setObjectName("regi_btn")
+        self.name_label = QtWidgets.QLabel(Dialog)
+        self.name_label.setGeometry(QtCore.QRect(50, 70, 72, 15))
+        self.name_label.setObjectName("name_label")
 
-        self.retranslateUi(MainWindow)
-        self.regi_btn.clicked.connect(MainWindow.showMaximized)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "欢迎来到的德莱联盟！"))
-        self.login_btn.setText(_translate("MainWindow", "登录"))
-        self.regi_btn.setText(_translate("MainWindow", "注册"))
-        self.name_label.setText(_translate("MainWindow", "账号"))
-        self.pwd_label.setText(_translate("MainWindow", "密码"))
-        self.name_edit.setToolTip(_translate("MainWindow", "请输入6-10位的账号"))
-        self.pwd_edit.setToolTip(_translate("MainWindow", "密码必须包括英文字母、数字、特殊符号"))
-        self.help_menu.setTitle(_translate("MainWindow", "帮助(&F)"))
-        self.about_action.setText(_translate("MainWindow", "关于"))
-        self.about_action.setShortcut(_translate("MainWindow", "F4"))
-        self.help_action.setText(_translate("MainWindow", "使用帮助"))
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.pwd_edit.setToolTip(_translate("Dialog", "密码必须包括英文字母、数字、特殊符号"))
+        self.pwd_label.setText(_translate("Dialog", "密码"))
+        self.name_edit.setToolTip(_translate("Dialog", "请输入6-10位的账号"))
+        self.login_btn.setText(_translate("Dialog", "登录"))
+        self.regi_btn.setText(_translate("Dialog", "注册"))
+        self.name_label.setText(_translate("Dialog", "账号"))
