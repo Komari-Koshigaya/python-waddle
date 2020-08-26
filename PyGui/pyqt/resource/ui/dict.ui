@@ -108,9 +108,47 @@
      <height>26</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu_help">
+    <property name="title">
+     <string>帮助(&amp;F)</string>
+    </property>
+    <addaction name="action_about"/>
+    <addaction name="action_help"/>
+   </widget>
+   <addaction name="menu_help"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_about">
+   <property name="text">
+    <string>关于</string>
+   </property>
+   <property name="shortcut">
+    <string>F4</string>
+   </property>
+  </action>
+  <action name="action_help">
+   <property name="text">
+    <string>使用帮助</string>
+   </property>
+  </action>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showMaximized()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>76</x>
+     <y>359</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
