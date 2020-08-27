@@ -2,8 +2,8 @@
 # python的gui编程
 
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
-from login_dialog import LoginDialog, DictWin
+from PyQt5.QtWidgets import QApplication
+from login_dialog import LoginDialog
 
 # 主程序，先出现登录界面，登录成功则跳转到主界面
 if __name__ == '__main__':

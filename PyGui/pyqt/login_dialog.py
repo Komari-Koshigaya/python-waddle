@@ -4,7 +4,8 @@
 # Datetime：      2020/8/26 8:53
 # IDE:            PyCharm
 # File Name：     login_dialog.py
-# DESCRIP：   ui的控制逻辑
+# DESCRIP：   登陆界面的控制逻辑
+
 import sys
 import logging
 from PyQt5.QtCore import Qt
@@ -19,8 +20,10 @@ from resource.login_ui import Ui_Dialog
 logger = console_logging(logging.DEBUG)
 
 
-# 登录界面的控制逻辑
 class LoginDialog(QMainWindow, Ui_Dialog):
+    """
+    登录界面的控制逻辑
+    """
     def __init__(self, parent=None):
         super(LoginDialog, self).__init__(parent)
         self.setupUi(self)
@@ -31,20 +34,27 @@ class LoginDialog(QMainWindow, Ui_Dialog):
         self.dict_win = DictWin()
         self.login_btn.clicked.connect(self.login_event)  # 绑定登陆函数
 
-    # 登陆函数
     def login_event(self):
+        """
+        点击登录时，进行登录验证
+        :return: None
+        """
         if self.name_edit.text() == "":
             QMessageBox.about(self, '登陆', '请输入姓名')
         elif self.pwd_edit.text() == "":
             QMessageBox.about(self, '登陆', '请输入密码')
         else:
             QMessageBox.information(self, '登陆', self.name_edit.text() + ' 欢迎登陆')
-            logger.debug("登录成功，将退出登录界面，跳转到主界面！")
-            self.dict_win.show()   # 显示主窗口
+            logger.debug(self.name_edit.text() + "登录成功，将退出登录界面，跳转到主界面！")
+            self.dict_win.show(self.name_edit.text())  # 显示主窗口, 并传递登录的用户名
             self.close()  # 关闭登录窗口
 
-    # 键盘按下esc键退出登录界面
     def keyPressEvent(self, e):
+        """
+        键盘按下esc键退出登录界面
+        :param e:
+        :return: None
+        """
         if e.key() == Qt.Key_Escape:
             self.close()
 
@@ -52,7 +62,7 @@ class LoginDialog(QMainWindow, Ui_Dialog):
 # 直接运行 测试上述代码
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    login_dia = LoginDialog()   # 实例化登录窗口
+    login_dia = LoginDialog()  # 实例化登录窗口
     login_dia.show()
     # dict_win = DictWin()  # 由于login界面有一个dict_win对象，故不需要在程序实例化；主程序实例化只适合在同一个文件
     app.exec_()

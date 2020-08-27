@@ -17,8 +17,10 @@ from resource.dict_ui import Ui_MainWindow
 logger = console_logging(logging.DEBUG)
 
 
-# 主界面的控制逻辑
 class DictWin(QMainWindow, Ui_MainWindow):
+    """
+    主界面的控制逻辑
+    """
     def __init__(self, parent=None):
         super(DictWin, self).__init__(parent)
         self.setupUi(self)
@@ -26,10 +28,22 @@ class DictWin(QMainWindow, Ui_MainWindow):
         self.setWindowTitle('主窗口')
         self.action_about.triggered.connect(self.about_event)
 
-    # 菜单栏的关于函数
     def about_event(self):
+        """
+        菜单栏的关于函数
+        :return: None
+        """
         logger.debug("点击了关于.")
         QMessageBox.about(self, '关于我们', '这是一个pyqt写成的gui')
+
+    def show(self, name='哈哈'):
+        """
+        重写页面显示的 show()方法，以界面跳转时传递的参数
+        :param name: 登录的用户名
+        :return: None
+        """
+        super(DictWin, self).show()
+        self.label.setText(name)
 
     def closeEvent(self, event):
         """
@@ -37,11 +51,7 @@ class DictWin(QMainWindow, Ui_MainWindow):
         :param event: close()触发的事件
         :return: None
         """
-        reply = QMessageBox.question(self,
-                                     '本程序',
-                                     "是否要退出程序？",
-                                     QMessageBox.Yes | QMessageBox.No,
-                                     QMessageBox.No)
+        reply = QMessageBox.question(self, '本程序', "是否要退出程序？", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
         if reply == QMessageBox.Yes:
             logger.debug("还是决定要退出")
             event.accept()
